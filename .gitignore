@@ -1,0 +1,7 @@
+*.pickle
+*.zip
+/data
+*.csv
+*.txt
+*.xlsx
+*.dat
