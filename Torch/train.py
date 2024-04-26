@@ -30,8 +30,6 @@ def main(config):
     device = torch.device('cpu') if config.gpu_id < 0 else torch.device('cuda:%d' % config.gpu_id)
 
     x, y = load_mnist(is_train=True)
-    # Reshape tensor to chunk of 1-d vectors.
-    x = x.view(x.size(0), -1)
 
     train_cnt = int(x.size(0) * config.train_ratio)
     valid_cnt = x.size(0) - train_cnt     # x.size = torch.Size([60000, 784])
